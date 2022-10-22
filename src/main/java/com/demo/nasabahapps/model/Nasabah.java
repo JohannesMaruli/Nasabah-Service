@@ -22,4 +22,6 @@ public class Nasabah {
     int penghasilan;
     String jenisNasabah;
     int idCustomer;
+
+    //
 }
