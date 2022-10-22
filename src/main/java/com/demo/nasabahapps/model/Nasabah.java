@@ -23,5 +23,5 @@ public class Nasabah {
     String jenisNasabah;
     int idCustomer;
 
-    //
+    // test
 }
