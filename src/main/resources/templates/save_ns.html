@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="ISO-8859-1">
+    <title>Input nasabah</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Save Nasabah</h2>
+    <hr>
+    <a th:href="@{/}"> Back to List Nasabah</a>
+
+    <div class="container"></div>
+    <form name="nsForm" th:action="@{/saveNs}" th:object="${nasabah}"
+          method="POST" onsubmit="return validateForm()">
+
+        <div class="form-group">
+            <label for="nama">Name</label>
+            <input id="nama" type="text" name="fname" th:field="*{nama}" placeholder="nama"
+                   class="form-control mb-4 col-4">
+        </div>
+
+        <div class="form-group">
+            <label for="tempatlahir">Tempat Lahir</label>
+            <input id="tempatlahir" type="text" th:field="*{tempatLahir}" placeholder="tempat lahir"
+                   class="form-control mb-4 col-4">
+        </div>
+
+        <div class="form-group">
+            <label for="tanggallahir">Tanggal Lahir</label>
+            <input id="tanggallahir" type="date" th:field="*{tanggalLahir}" placeholder="tanggal lahir"
+                   class="form-control mb-4 col-4">
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <input type="text" th:field="*{Alamat}" id="alamat" placeholder="alamat" class="form-control mb-4 col-4">
+        </div>
+
+        <div class="form-group">
+            <label for="penghasilan">Rata - rata penghasilan sebulan</label>
+            <input type="number" th:field="*{penghasilan}" id="penghasilan" placeholder="penghasilan" class="form-control mb-4 col-4">
+        </div>
+
+        <div class="form-group">
+            <label>Jenis Nasabah</label>
+            <select name="jenisNasabah" class="form-control mb-4 col-4">
+                <option value="0">Jenis Nasabah</option>
+                <option value="Perorangan">Perorangan</option>
+                <option value="Perusahaan">Perusahaan</option>
+            </select>
+        </div>
+
+        <label for="idCustomer">Id Customer</label>
+        <input id="idCustomer" type="text" th:field="*{idCustomer}" placeholder="idCustomer"
+               class="form-control mb-4 col-4">
+
+        <button onclick="validateForm()" type="submit" value="Submit" class="btn btn-danger btn-xs"> Save Nasabah</button>
+    </form>
+
+    <hr>
+
+
+</div>
+
+</body>
+
+</html>
